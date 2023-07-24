@@ -1,0 +1,19 @@
+.home {
+    padding: 40px;
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.home img {
+   width: 800px;
+   height: 600px;
+}
+
+.home p {
+    font-size: 30px;
+    width: 520px;
+}

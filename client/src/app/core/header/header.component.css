@@ -1,0 +1,36 @@
+.navigation {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation h1 a {
+    font-size: 40px;
+}
+
+.navigation ul {
+    list-style: none;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation a {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 0px 20px;
+}
+
+.navBtn {
+    padding: 4px 12px;
+    border-radius: 5px;
+}
+
+.navBtn:hover {
+    background-color: #ff0000;
+}

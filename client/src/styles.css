@@ -1,0 +1,30 @@
+@import url("https://use.fontawesome.com/releases/v6.4.0/css/all.css");
+
+* {
+    box-sizing: border-box !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'poppins', sans-serif;
+    line-height: 1.80857;
+    font-weight: normal;
+    overflow-x: hidden;
+
+    background-image: url('./images/banner2.jpg');
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none !important;
+}

@@ -1,0 +1,33 @@
+.ups {
+    width: 100vw;
+    height: 100vh;
+}
+
+.message {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.message h2,h3,p {
+    font-family: "Agency FB";
+}
+
+.message h2 {
+    font-weight: 500;
+    line-height: 50px;
+    font-size: 200px;
+    margin-bottom: 0;
+}
+
+.message h3 {
+    font-weight: 700;
+    font-size: 70px;
+}
+
+.message p {
+    font-size: 40px;
+    font-style: italic;
+    color: gold
+}

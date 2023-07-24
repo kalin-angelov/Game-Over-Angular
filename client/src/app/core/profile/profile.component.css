@@ -1,0 +1,133 @@
+.profile {
+    width: 100vw;
+}
+
+.profile span {
+    color: gold;
+}
+
+.profile hr {
+    width: 95%;
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 1px solid white;
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+}
+
+.userIcons {
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userIcons h1 {
+    font-weight: 500;
+    line-height: 50px;
+    font-size: 50px;
+    font-family: "Agency FB";
+}
+
+.userIcons a {
+    text-align: center;
+    background-color: red;
+    padding: 5px;
+    margin: 10px;
+    width: 180px;
+    font-size: 18px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.userIcons a:hover {
+    color: red;
+    background-color: white;
+}
+
+.userIcons img {
+    width: 200px;
+    height: 200px;
+    border: 5px solid gold;
+    border-radius: 20px;
+}
+
+.userInformation hr {
+    margin: 0;
+    width: 500px;
+    border-top: 1px solid;
+}
+
+.userInformation h1 {
+    margin: 0;
+}
+
+.userInformation p {
+    margin: 0;
+}
+
+.createBtn {
+    display: block;
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.createBtn:hover {
+    background-color: white;
+    color: red;
+    border-color: red;
+}
+
+.list h2 {
+    text-align: center;
+    font-weight: 500;
+    line-height: 50px;
+    font-size: 50px;
+    font-family: "Agency FB";
+}
+
+.list p {
+    text-align: center;
+    color: gold;
+    font-style: italic;
+    font-size: 32px;
+    padding: 10px;
+}
+
+.gameList {
+    margin: 50px;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.noGames {
+    height: 40vh;
+}
+
+.noGames h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 65px;
+    font-family: "Agency FB";
+    margin-top: 90px;
+}
+
+.noGames p {
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+    color:  gold
+}

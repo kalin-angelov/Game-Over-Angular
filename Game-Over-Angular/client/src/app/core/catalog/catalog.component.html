@@ -1,4 +1,27 @@
 <div class="catalog">
     <h2>Game's</h2>
-    <app-games-list />
+    <div class="gameList" *ngIf="gamesList.length !== 0">
+        <div class="game" *ngFor="let game of gamesList">
+            <img src="{{ game.imageUrl }}" alt="{{ game.title }}" />
+        
+            <div class="gameInfo">
+                <h3>Title: {{ game.title }}</h3>
+                <p>Help: {{ game.help }}</p>
+                <p>Platform: {{ game.platform }}</p>
+            </div>
+        
+            <a class="detailsBtn">
+                <i class="fa-solid fa-circle-info"></i> 
+                Details
+            </a>
+        </div>
+    </div>
+    
+    <div class="noGames" *ngIf="gamesList.length === 0">
+        <h3>Game Catalog Is Empty</h3>
+        <p> Be First To Add New Game! 
+            <i class="fa-regular fa-hand-point-right"> </i>
+            <a href="#">Register</a>
+        </p>
+    </div>
 </div>

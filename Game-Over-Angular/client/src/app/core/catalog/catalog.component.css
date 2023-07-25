@@ -6,3 +6,119 @@
     padding-bottom: 60px;
     font-family: "Agency FB";
 }
+
+.gameList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+
+.game {
+  
+    width: 304px;
+    height: 635px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 30px;
+    background-color: rgba(155, 155, 155, 0.581);
+}
+
+.game img {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 300px;
+    height: 365px;
+}
+
+.game i {
+    padding-right: 10px;
+}
+
+.gameInfo {
+    text-align: left;
+    padding: 20px;
+}
+
+.gameInfo h3, p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.detailsBtn {
+    text-align: center;
+    border-radius: 20px;
+    background-color: #ff0101;
+    border: 2px solid white;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.detailsBtn:hover {
+    color: red;
+    background-color: white;
+    border-color: red;
+}
+
+.noGames {
+    width: 100vw;
+    height: 50vh;
+}
+
+.noGames h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 70px;
+    font-family: "Agency FB";
+    margin-top: 150px;
+}
+
+.noGames p {
+    text-shadow: 1px 1px #ff0101;
+    font-size: 20px;
+    font-style: italic;
+    padding: 11px 67px;
+    text-align: center;
+}
+
+.noGames i {
+    color: gold;
+    padding-right: 10px;
+}
+
+.gameList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.noGames {
+    width: 100vw;
+    height: 50vh;
+}
+
+.noGames h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 70px;
+    font-family: "Agency FB";
+    margin-top: 150px;
+}
+
+.noGames p {
+    text-shadow: 1px 1px #ff0101;
+    font-size: 20px;
+    font-style: italic;
+    padding: 11px 67px;
+    text-align: center;
+}
+
+.noGames i {
+    color: gold;
+    padding-right: 10px;
+}

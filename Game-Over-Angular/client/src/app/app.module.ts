@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +15,9 @@ import { ErrorComponent } from './core/error/error.component';
 import { ProfileComponent } from './core/profile/profile.component';
 import { MyGamesComponent } from './core/profile/my-games/my-games.component';
 import { CatalogComponent } from './core/catalog/catalog.component';
-import { GamesListComponent } from './core/catalog/games-list/games-list.component';
-import { GameInfoComponent } from './core/catalog/game-info/game-info.component';
+import { GlobalLoaderComponent } from './core/global-loader/global-loader.component';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -31,12 +33,13 @@ import { GameInfoComponent } from './core/catalog/game-info/game-info.component'
     ProfileComponent,
     MyGamesComponent,
     CatalogComponent,
-    GamesListComponent,
-    GameInfoComponent
+    GlobalLoaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,8 +10,8 @@ import { CreateComponent } from './create/create.component';
 import { ErrorComponent } from './error/error.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CatalogComponent } from './catalog/catalog.component';
-import { GamesListComponent } from './catalog/games-list/games-list.component';
-import { GameInfoComponent } from './catalog/game-info/game-info.component';
+import { GlobalLoaderComponent } from './global-loader/global-loader.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -26,10 +26,9 @@ import { GameInfoComponent } from './catalog/game-info/game-info.component';
     ErrorComponent,
     ProfileComponent,
     CatalogComponent,
-    GamesListComponent,
-    GameInfoComponent
+    GlobalLoaderComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [
     HeaderComponent,
     FooterComponent,
@@ -41,8 +40,7 @@ import { GameInfoComponent } from './catalog/game-info/game-info.component';
     ErrorComponent,
     ProfileComponent,
     CatalogComponent,
-    GamesListComponent,
-    GameInfoComponent
+    GlobalLoaderComponent
   ]
 })
 export class CoreModule { }

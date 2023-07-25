@@ -16,7 +16,7 @@ body {
     font-weight: normal;
     overflow-x: hidden;
 
-    background-image: url('./images/banner2.jpg');
+    background-image: url('assets/images/banner2.jpg');
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

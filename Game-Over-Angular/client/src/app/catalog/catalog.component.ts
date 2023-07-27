@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { Game } from 'src/app/types/game';
-import { GlobalLoaderService } from '../global-loader/global-loader.service';
+import { GlobalLoaderService } from '../core/global-loader/global-loader.service';
 
 @Component({
   selector: 'app-catalog',

@@ -3,13 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { EditComponent } from './edit/edit.component';
-import { CreateComponent } from './create/create.component';
-import { ErrorComponent } from './error/error.component';
-import { ProfileComponent } from './profile/profile.component';
-import { CatalogComponent } from './catalog/catalog.component';
+import { EditComponent } from '../edit/edit.component';
+import { CreateComponent } from '../create/create.component';
+import { NotfoundComponent } from '../not-found/not-found.component';
+import { CatalogComponent } from '../catalog/catalog.component';
 import { GlobalLoaderComponent } from './global-loader/global-loader.component';
 import { RouterModule } from '@angular/router';
 
@@ -19,12 +16,9 @@ import { RouterModule } from '@angular/router';
   declarations: [
     FooterComponent,
     HeaderComponent,
-    LoginComponent,
-    RegisterComponent,
     EditComponent,
     CreateComponent,
-    ErrorComponent,
-    ProfileComponent,
+    NotfoundComponent,
     CatalogComponent,
     GlobalLoaderComponent,
   ],
@@ -33,12 +27,9 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent,
-    RegisterComponent,
     EditComponent,
     CreateComponent,
-    ErrorComponent,
-    ProfileComponent,
+    NotfoundComponent,
     CatalogComponent,
     GlobalLoaderComponent
   ]

@@ -2,14 +2,14 @@
     <div class="navigation">
         <h1><a routerLink="/">GAME OVER</a></h1>
             <ul *ngIf="isLoggedIn"> 
-                <li class="navBtn"><a routerLink="catalog">Catalog</a></li>
-                <li class="navBtn"><a routerLink="profile">Profile</a></li>
-                <li class="navBtn"><a routerLink="logout">Logout</a></li>
+                <li class="navBtn"><a routerLink="/catalog">Catalog</a></li>
+                <li class="navBtn"><a routerLink="/profile">Profile</a></li>
+                <li class="navBtn" (click)="logout()"><a>Logout</a></li>
             </ul>
             <ul *ngIf="!isLoggedIn">
-                <li class="navBtn"><a routerLink="catalog">Catalog</a></li>
-                <li class="navBtn"><a routerLink="login">Login</a></li>
-                <li class="navBtn"><a routerLink="register">Register</a></li>
+                <li class="navBtn"><a routerLink="/catalog">Catalog</a></li>
+                <li class="navBtn"><a routerLink="/login">Login</a></li>
+                <li class="navBtn"><a routerLink="/register">Register</a></li>
             </ul>
     </div>
 </header>

@@ -10,7 +10,7 @@
                 <p>Platform: {{ game.platform }}</p>
             </div>
         
-            <a class="detailsBtn">
+            <a class="detailsBtn" routerLink="/details/{{game._id}}">
                 <i class="fa-solid fa-circle-info"></i> 
                 Details
             </a>
@@ -21,7 +21,7 @@
         <h3>Game Catalog Is Empty</h3>
         <p> Be First To Add New Game! 
             <i class="fa-regular fa-hand-point-right"> </i>
-            <a href="#">Register</a>
+            <a routerLink="register">Register</a>
         </p>
     </div>
 </div>

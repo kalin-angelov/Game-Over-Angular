@@ -1,0 +1,50 @@
+<div class="details" *ngIf="game">
+
+    <h1>{{ game.title }}</h1>
+    <div class="detailsInfo">
+        <img src='{{ game.imageUrl }}' alt='{{ game.imageUrl }}' />
+
+        <div class="gameInfo">
+            <p>Type: <span>{{ game.genre }}</span></p>
+            <p>Platform: <span>{{ game.platform }}</span></p>
+            <p>Number Of Players: <span>{{ game.players }}</span></p>
+            <p>Help: <span>{{ game.help }}</span></p>
+            <p>Description: <span>{{ game.summary }}</span></p>
+        </div>
+    </div>
+
+
+    <form class="commentForm">
+        <textarea placeholder="comment..." type="text" name="comment"></textarea>
+        <button class="send">Send</button>
+    </form>
+
+    <div class="commentContainer">
+
+        <div class="commentsInfo">
+            <div class="userSection">
+                <header>
+                    <img src="/assets/images/userPic.png" alt="userPic" />
+                    <h3></h3>
+                    <p>
+                        <i class="fa-regular fa-calendar-days"></i> -
+
+                    </p>
+                </header>
+                <ul>
+                    <li><button class={styles.editComment} ><i class="fa-solid fa-pen"></i></button></li>
+                    <li><button class={styles.deleteComment}><i class="fa-solid fa-trash"></i></button></li>
+                    <li><span><i class="fa-brands fa-gratipay"></i> </span></li>
+                </ul>
+                <ul>
+                    <li> <button class="likeComment"><i class="fa-solid fa-thumbs-up"></i></button></li>
+                    <li><span><i class="fa-brands fa-gratipay"></i></span></li>
+                </ul>
+            </div>
+            <div class="commentSection">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+</div>

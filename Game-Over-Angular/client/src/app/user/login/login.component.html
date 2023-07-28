@@ -8,15 +8,27 @@
         <h1>Login</h1>
         <div class="formSection">
             <i class="fa-solid fa-at"></i>
-            <input class="email" placeholder="Email" type="text" name="email" />
+            <input 
+                class="email"
+                placeholder="Email" 
+                type="text" 
+                name="email" 
+                #inputEmail
+            />
         </div>
         <div class="formSection">
             <i class="fa-solid fa-key"></i>
-            <input class="password" placeholder="Password" type="password" name="password" />
+            <input 
+                class="password" 
+                placeholder="Password" 
+                type="password" 
+                name="password" 
+                #inputPassword
+            />
         </div>
-        <div>
-            <button class="send">Login</button>
-        </div>
+
+        <button class="send" (click)=" login(inputEmail.value, inputPassword.value)">Login</button>
+        
         <div class="loginInfo">
             <p> Don't Have An Account? Click Here 
                 <i class="fa-regular fa-hand-point-right"> </i>

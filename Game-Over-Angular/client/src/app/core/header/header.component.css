@@ -1,5 +1,4 @@
 .navigation {
-    padding: 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -21,14 +20,14 @@
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 22px;
     padding: 0px 20px;
 }
 
 .navBtn {
     padding: 4px 12px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .navBtn:hover {

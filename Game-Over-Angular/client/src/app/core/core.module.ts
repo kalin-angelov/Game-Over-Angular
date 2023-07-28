@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from '../home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { EditComponent } from '../edit/edit.component';
-import { CreateComponent } from '../create/create.component';
 import { NotfoundComponent } from '../not-found/not-found.component';
-import { CatalogComponent } from '../catalog/catalog.component';
+import { CatalogComponent } from '../games/catalog/catalog.component';
 import { GlobalLoaderComponent } from './global-loader/global-loader.component';
 import { RouterModule } from '@angular/router';
 
@@ -16,8 +14,6 @@ import { RouterModule } from '@angular/router';
   declarations: [
     FooterComponent,
     HeaderComponent,
-    EditComponent,
-    CreateComponent,
     NotfoundComponent,
     CatalogComponent,
     GlobalLoaderComponent,
@@ -27,8 +23,6 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    EditComponent,
-    CreateComponent,
     NotfoundComponent,
     CatalogComponent,
     GlobalLoaderComponent

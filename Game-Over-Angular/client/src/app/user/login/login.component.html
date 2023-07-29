@@ -1,10 +1,6 @@
 <div class="login">
 
-    <div class="error">
-        <p>Error</p>
-    </div>
-
-    <form class="loginForm">
+    <form class="loginForm" #form="ngForm" (ngSubmit)="login(form)">
         <h1>Login</h1>
         <div class="formSection">
             <i class="fa-solid fa-at"></i>
@@ -13,8 +9,17 @@
                 placeholder="Email" 
                 type="text" 
                 name="email" 
-                #inputEmail
+                #inputEmail="ngModel"
+                ngModel
+                required
+                [appEmail]="appEmailDomains"
             />
+
+           <ng-container  *ngIf="inputEmail.touched">
+                <p class="error" *ngIf="inputEmail.errors?.['appEmailValidator']">Email is not valid!</p>
+                <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required!</p>
+           </ng-container >
+
         </div>
         <div class="formSection">
             <i class="fa-solid fa-key"></i>
@@ -24,15 +29,17 @@
                 type="password" 
                 name="password" 
                 #inputPassword
+                ngModel
+                required
             />
         </div>
 
-        <button class="send" (click)=" login(inputEmail.value, inputPassword.value)">Login</button>
+        <button class="send">Login</button>
         
         <div class="loginInfo">
             <p> Don't Have An Account? Click Here 
                 <i class="fa-regular fa-hand-point-right"> </i>
-                <a routerLink="register">Register</a>
+                <a routerLink="/register">Register</a>
             </p>
         </div>
     </form>

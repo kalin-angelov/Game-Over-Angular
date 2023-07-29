@@ -13,10 +13,6 @@ const routes: Routes = [
         component: CatalogComponent,
         // canActivate: [AuthActivate] 
     },
-    {
-        path: 'create',
-        component: CreateGameComponent
-    },
     { 
         path: 'details/:gameId',
        component: DetailsGameComponent
@@ -27,6 +23,10 @@ const routes: Routes = [
         path: 'edit/:gameId', 
         component: EditGameComponent, 
         // canActivate: [AuthActivate] 
+    },
+    {
+        path: 'create',
+        component: CreateGameComponent
     }
 ];
 

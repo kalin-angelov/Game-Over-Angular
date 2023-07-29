@@ -16,7 +16,7 @@ export class HeaderComponent {
   }
   
   logout(): void {
-    this.userService.logout;
+    this.userService.logout();
     this.router.navigate(['/catalog']);
   }
 }

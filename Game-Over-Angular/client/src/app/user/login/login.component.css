@@ -71,15 +71,16 @@
     color:  gold
 }
 
+.loginInfo a {
+    cursor: pointer;
+}
+
 .error {
     position: fixed;
     right: 80px;
     top: 80px;
     text-align: center;
     width: 380px;
-}
-
-.error p {
     background: red;
     font-size: 30px;
     height: auto;

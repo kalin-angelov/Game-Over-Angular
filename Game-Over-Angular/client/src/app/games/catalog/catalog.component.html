@@ -5,9 +5,9 @@
             <img src="{{ game.imageUrl }}" alt="{{ game.title }}" />
         
             <div class="gameInfo">
-                <h3>Title: {{ game.title }}</h3>
-                <p>Help: {{ game.help }}</p>
-                <p>Platform: {{ game.platform }}</p>
+                <p>Title: <span>{{ game.title }}</span></p>
+                <p>Help: <span>{{ game.help }}</span></p>
+                <p>Platform: <span>{{ game.platform }}</span></p>
             </div>
         
             <a class="detailsBtn" routerLink="/details/{{game._id}}">
@@ -21,7 +21,7 @@
         <h3>Game Catalog Is Empty</h3>
         <p> Be First To Add New Game! 
             <i class="fa-regular fa-hand-point-right"> </i>
-            <a routerLink="register">Register</a>
+            <a routerLink="/register">Register</a>
         </p>
     </div>
 </div>

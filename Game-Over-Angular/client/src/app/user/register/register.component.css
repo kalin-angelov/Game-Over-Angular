@@ -72,6 +72,10 @@
     color:  gold
 }
 
+.registerInfo a {
+    cursor: pointer;
+}
+
 .error {
     position: fixed;
     right: 80px;

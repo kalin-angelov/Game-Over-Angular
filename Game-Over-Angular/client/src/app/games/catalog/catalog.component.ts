@@ -10,16 +10,11 @@ import { GlobalLoaderService } from '../../core/global-loader/global-loader.serv
 })
 export class CatalogComponent implements OnInit{
   gamesList: Game[] = [];
-  constructor( private apiService: ApiService, private globalLoaderService: GlobalLoaderService ) {}
+  constructor( private apiService: ApiService ) {}
 
   ngOnInit(): void {
-    this.globalLoaderService.showLoader();
-
-    setTimeout(() => {
-      this.apiService.getAllGames().subscribe(games => {
-        this.gamesList = games;
-      });
-      this.globalLoaderService.hideLoader();
-    },1500);
+    this.apiService.getAllGames().subscribe(games => {
+      this.gamesList = games;
+    });
   };
 }

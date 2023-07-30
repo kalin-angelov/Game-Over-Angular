@@ -11,12 +11,12 @@ export class ApiService {
   constructor( private http: HttpClient) { }
 
   getAllGames() {
-    const { appUrl } = environment;
-    return this.http.get<Game[]>(`${appUrl}`);
+    const { apiUrl } = environment;
+    return this.http.get<Game[]>(`${apiUrl}/data/games`);
   }
 
   getGame(id: string) {
-    const { appUrl } = environment;
-    return this.http.get<Game>(`${appUrl}/${id}`);
+    const { apiUrl } = environment;
+    return this.http.get<Game>(`${apiUrl}/data/games/${id}`);
   }
 }

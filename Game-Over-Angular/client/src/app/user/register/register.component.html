@@ -4,23 +4,47 @@
         <p>Error</p>
     </div>
     
-    <form class="registerForm">
+    <form class="registerForm" #form="ngForm" (ngSubmit)="register(form)">
         <h1>Register Form</h1>
         <div class="formSection">
             <i class="fa-solid fa-user"></i>
-            <input placeholder="Username" type="text" name="username" />
+            <input 
+                placeholder="Username" 
+                type="text" 
+                name="username" 
+                #inputUsername="ngModel"
+                ngModel
+            />
         </div>
         <div class="formSection">
             <i class="fa-solid fa-at"></i>
-            <input placeholder="Email" type="text" name="email" />
+            <input 
+                placeholder="Email" 
+                type="text" 
+                name="email" 
+                #inputEmail="ngModel"
+                ngModel
+            />
         </div>
         <div class="formSection">
             <i class="fa-solid fa-key"></i>
-            <input placeholder="Password" type="password" name="password" />
+            <input 
+                placeholder="Password" 
+                type="password" 
+                name="password" 
+                #inputPassword="ngModel"
+                ngModel
+            />
         </div>
         <div class="formSection">
             <i class="fa-solid fa-key"></i>
-            <input placeholder="Confirm Password" type="password" name="rePassword" />
+            <input 
+                placeholder="Confirm Password" 
+                type="password" 
+                name="rePassword" 
+                #inputRePassword="ngModel"
+                ngModel
+            />
         </div>
         
         <button class="send">Register</button>

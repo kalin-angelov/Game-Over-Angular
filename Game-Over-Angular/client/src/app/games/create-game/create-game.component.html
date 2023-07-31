@@ -1,19 +1,32 @@
 <div class="create">
 
-    <div class="error">
-        <p>Error</p>
-    </div>
-
-    <form class="createForm">
+    <form class="createForm" #form="ngForm">
         <h1>Add New Game</h1>
         <div class="formSection">
             <i class="fa-solid fa-file-signature"></i>
-            <input class="title" placeholder="Title" type="text" name="title" />
+            <input 
+                class="title" 
+                placeholder="Title" 
+                type="text" 
+                name="title"
+                #inputTitle="ngModel"
+                ngModel
+                required
+                minlength="3"
+            />
         </div>
+
+        <ng-container  *ngIf="inputTitle.touched">
+            <p class="error" *ngIf="inputTitle.errors?.['minlength']">Title must be at least 3 characters!</p>
+            <p class="error" *ngIf="inputTitle.errors?.['required']">Title is required!</p>
+        </ng-container >
+
         <div class="formSection">
             <i class="fa-brands fa-hire-a-helper"></i>
-            <select class='help' name='help'>
-                <option value="" disabled hidden>Help With</option>
+            <select 
+                class='help' 
+                name='help'>
+                <option value="" hidden>Help With</option>
                 <option>Other</option>
                 <option>Location</option>
                 <option>Item</option>
@@ -21,10 +34,13 @@
                 <option>Skills</option>
             </select>
         </div>
+
         <div class="formSection">
             <i class="fa-solid fa-gamepad"></i>
-            <select class="platform" name='platform'>
-                <option value="" disabled hidden>Platform</option>
+            <select 
+                class="platform" 
+                name='platform'>
+                <option value="" hidden>Platform</option>
                 <option>Other</option>
                 <option>PlayStation</option>
                 <option>Xbox</option>
@@ -32,22 +48,85 @@
                 <option>PC</option>
             </select>
         </div>
+
         <div class="formSection">
             <i class="fa-solid fa-dna"></i>
-            <input class="genre" placeholder="Genre" type="text" name="genre" />
+            <input 
+                class="genre" 
+                placeholder="Genre" 
+                type="text" 
+                name="genre" 
+                #inputGenre="ngModel"
+                ngModel
+                required
+                minlength="3"
+            />
         </div>
+
+        <ng-container  *ngIf="inputGenre.touched">
+            <p class="error" *ngIf="inputGenre.errors?.['minlength']">Genre must be at least 3 characters!</p>
+            <p class="error" *ngIf="inputGenre.errors?.['required']">Genre is required!</p>
+        </ng-container >
+
         <div class="formSection">
             <i class="fa-solid fa-people-group"></i>
-            <input class="players" placeholder="Players" type="text" name="players" />
+            <input 
+                class="players" 
+                placeholder="Players" 
+                type="text" 
+                name="players" 
+                #inputPlayers="ngModel"
+                ngModel
+                required
+                min="1"
+            />
         </div>
+
+        <ng-container  *ngIf="inputPlayers.touched">
+            <p class="error" *ngIf="inputPlayers.errors?.['min']">Number of players must be at least 1!</p>
+            <p class="error" *ngIf="inputPlayers.errors?.['required']">Number of players is required!</p>
+        </ng-container >
+
         <div class="formSection">
             <i class="fa-regular fa-image"></i>
-            <input class="imageUrl" placeholder="ImageUrl" type="text" name="imageUrl" />
+            <input 
+                class="imageUrl" 
+                placeholder="ImageUrl" 
+                type="text" 
+                name="imageUrl" 
+                #inputImgUrl="ngModel"
+                ngModel
+                required
+                minlength="5"
+            />
         </div>
+
+        <ng-container  *ngIf="inputImgUrl.touched">
+            <p class="error" *ngIf="inputImgUrl.errors?.['minlength']">ImageUrl is not valid!</p>
+            <p class="error" *ngIf="inputImgUrl.errors?.['required']">ImageUrl is required!</p>
+        </ng-container >
+
         <div class="formSection">
             <i class="fa-solid fa-pen-to-square"></i>
-            <textarea class="summary" placeholder="Summary" type="text" name="summary"></textarea>
+            <textarea 
+                class="summary" 
+                placeholder="Summary" 
+                type="text" 
+                name="summary"
+                #inputSummary="ngModel"
+                ngModel
+                required
+                minlength="10"
+                maxlength="500"
+            ></textarea>
         </div>
+
+        <ng-container  *ngIf="inputSummary.touched">
+            <p class="error" *ngIf="inputSummary.errors?.['maxlength']">Summary can't be more than 500 characters!</p>
+            <p class="error" *ngIf="inputSummary.errors?.['minlength']">Summary must be at least 10 characters!</p>
+            <p class="error" *ngIf="inputSummary.errors?.['required']">Summary is required!</p>
+        </ng-container >
+
         <div>
             <button class="send">Save</button>
         </div>

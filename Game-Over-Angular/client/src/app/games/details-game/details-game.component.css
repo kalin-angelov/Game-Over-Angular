@@ -64,6 +64,7 @@
 
 .commentForm textarea {
     width: 800px;
+    height: 100px;
     border-radius: 10px;
 }
 

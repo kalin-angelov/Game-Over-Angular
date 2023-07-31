@@ -33,7 +33,7 @@ export class UserService {
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
   }
 
-  getUser() : User |undefined {
+  getUser() : User | undefined {
     const user = this.user ? this.user : undefined
     return user
   }

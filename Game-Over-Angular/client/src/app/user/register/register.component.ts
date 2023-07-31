@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/constants';
 
 
 @Component({
@@ -10,15 +11,15 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-
+  appEmailDomains = DEFAULT_EMAIL_DOMAINS;
   error: string | undefined
 
   constructor(private userService: UserService, private router: Router) {}
 
   register( form: NgForm): void {
-    // if (form.invalid) {
-    //   return
-    // }
+    if (form.invalid) {
+      return
+    }
     
     const data = {...form.value};
 

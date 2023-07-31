@@ -1,8 +1,4 @@
 <div class="register">
-
-    <div class="error">
-        <p>Error</p>
-    </div>
     
     <form class="registerForm" #form="ngForm" (ngSubmit)="register(form)">
         <h1>Register Form</h1>
@@ -14,8 +10,16 @@
                 name="username" 
                 #inputUsername="ngModel"
                 ngModel
+                required
+                minlength="5"
             />
         </div>
+        
+        <ng-container  *ngIf="inputUsername.touched">
+            <p class="error" *ngIf="inputUsername.errors?.['minlength']">Username must be at least 5 characters!</p>
+            <p class="error" *ngIf="inputUsername.errors?.['required']">Username is required!</p>
+        </ng-container >
+
         <div class="formSection">
             <i class="fa-solid fa-at"></i>
             <input 
@@ -24,8 +28,16 @@
                 name="email" 
                 #inputEmail="ngModel"
                 ngModel
+                required
+                [appEmail]="appEmailDomains"
             />
         </div>
+
+        <ng-container  *ngIf="inputEmail.touched">
+            <p class="error" *ngIf="inputEmail.errors?.['appEmailValidator']">Email is not valid!</p>
+            <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required!</p>
+        </ng-container >
+
         <div class="formSection">
             <i class="fa-solid fa-key"></i>
             <input 
@@ -34,8 +46,16 @@
                 name="password" 
                 #inputPassword="ngModel"
                 ngModel
+                required
+                minlength="6"
             />
         </div>
+
+        <ng-container  *ngIf="inputPassword.touched">
+            <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must be at least 6 characters!</p>
+            <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required!</p>
+        </ng-container >
+
         <div class="formSection">
             <i class="fa-solid fa-key"></i>
             <input 
@@ -44,8 +64,13 @@
                 name="rePassword" 
                 #inputRePassword="ngModel"
                 ngModel
+                required
             />
         </div>
+
+        <ng-container  *ngIf="inputRePassword.touched">
+            <p class="error" *ngIf="inputRePassword.errors?.['required']">Confirm Password</p>
+        </ng-container >
         
         <button class="send">Register</button>
         

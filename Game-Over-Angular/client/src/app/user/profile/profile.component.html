@@ -8,12 +8,12 @@
             </a>
 
         </div>
-        <div class="userInformation">
+        <div class="userInformation" *ngIf="user">
             <h1>Welcome:</h1>
             <hr />
-            <p>Username: <span>Orel40</span></p>
+            <p>Username: <span>{{ user.username }}</span></p>
             <hr />
-            <p>Email: <span>Orel40@abv.bg</span></p>
+            <p>Email: <span>{{ user.email }}</span></p>
             <hr />
             <p>Created games: <span>10</span></p>
             <hr />

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class CreateGameComponent {
 
+  addGame( form: NgForm):void {
+    if (form.invalid) {
+      return
+    }
+  }
 }

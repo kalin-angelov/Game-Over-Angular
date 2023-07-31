@@ -5,12 +5,14 @@ import { CreateGameComponent } from './create-game/create-game.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { DetailsGameComponent } from './details-game/details-game.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CreateGameComponent, EditGameComponent, CatalogComponent, DetailsGameComponent],
   imports: [
     CommonModule,
-    GameRoutingModule
+    GameRoutingModule,
+    FormsModule
   ]
 })
 export class GamesModule { }

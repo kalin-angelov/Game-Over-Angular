@@ -1,6 +1,6 @@
 <div class="create">
 
-    <form class="createForm" #form="ngForm">
+    <form class="createForm" #form="ngForm" (ngSubmit)="addGame(form)">
         <h1>Add New Game</h1>
         <div class="formSection">
             <i class="fa-solid fa-file-signature"></i>
@@ -23,31 +23,41 @@
 
         <div class="formSection">
             <i class="fa-brands fa-hire-a-helper"></i>
-            <select 
-                class='help' 
-                name='help'>
-                <option value="" hidden>Help With</option>
-                <option>Other</option>
-                <option>Location</option>
-                <option>Item</option>
-                <option>Boss</option>
-                <option>Skills</option>
-            </select>
+            <input 
+                class="help" 
+                placeholder="Help With" 
+                type="text" 
+                name="help"
+                #inputHelp="ngModel"
+                ngModel
+                required
+                minlength="3"
+            />
         </div>
+
+        <ng-container  *ngIf="inputHelp.touched">
+            <p class="error" *ngIf="inputHelp.errors?.['minlength']">Help must be at least 3 characters!</p>
+            <p class="error" *ngIf="inputHelp.errors?.['required']">Help is required!</p>
+        </ng-container >
 
         <div class="formSection">
             <i class="fa-solid fa-gamepad"></i>
-            <select 
+            <input 
                 class="platform" 
-                name='platform'>
-                <option value="" hidden>Platform</option>
-                <option>Other</option>
-                <option>PlayStation</option>
-                <option>Xbox</option>
-                <option>Nintendo</option>
-                <option>PC</option>
-            </select>
+                placeholder="Platform" 
+                type="text" 
+                name="platform"
+                #inputPlatform="ngModel"
+                ngModel
+                required
+                minlength="2"
+            />
         </div>
+
+        <ng-container  *ngIf="inputPlatform.touched">
+            <p class="error" *ngIf="inputPlatform.errors?.['minlength']">Platform must be at least 2 characters!</p>
+            <p class="error" *ngIf="inputPlatform.errors?.['required']">Platform is required!</p>
+        </ng-container >
 
         <div class="formSection">
             <i class="fa-solid fa-dna"></i>

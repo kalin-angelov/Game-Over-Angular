@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthActivate } from '../core/guards/auth.activate';
 import { CatalogComponent } from './catalog/catalog.component';
-import { DetailsGameComponent } from './details-game/details-game.component';
+import { DetailsGameComponent } from './details-game/details-game.component'
 import { EditGameComponent } from './edit-game/edit-game.component';
 import { CreateGameComponent } from './create-game/create-game.component';
 

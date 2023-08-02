@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/api.service';
+import { GamesService } from '../games.service';
 import { Game } from 'src/app/types/game';
 import { GlobalLoaderService } from '../../core/global-loader/global-loader.service';
 
@@ -10,10 +10,10 @@ import { GlobalLoaderService } from '../../core/global-loader/global-loader.serv
 })
 export class CatalogComponent implements OnInit{
   gamesList: Game[] = [];
-  constructor( private apiService: ApiService ) {}
+  constructor( private gamesService: GamesService ) {}
 
   ngOnInit(): void {
-    this.apiService.getAllGames().subscribe(games => {
+    this.gamesService.getAllGames().subscribe(games => {
       this.gamesList = games;
     });
   };

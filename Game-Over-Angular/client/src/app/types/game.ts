@@ -3,7 +3,7 @@ export interface Game{
     help: string,
     imageUrl: string,
     platform: string,
-    players: string,
+    players: number,
     summary: string,
     title: string,
     _createdOn: number,

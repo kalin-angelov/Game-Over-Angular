@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { GamesModule } from './games/games.module';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
+import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 
 
 @NgModule({
@@ -29,7 +30,11 @@ import { UserModule } from './user/user.module';
     UserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

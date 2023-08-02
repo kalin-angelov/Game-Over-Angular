@@ -29,6 +29,8 @@ export class UserService {
   }
 
   setUserInLs(user: User): void {
+    console.log(user);
+    
     this.user = user;
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
   }
@@ -38,9 +40,9 @@ export class UserService {
     return user
   }
 
-  login(data: User): Observable<User> {
+  login(data: User) {
     const { apiUrl } = environment;
-    return this.http.post<User>(`${apiUrl}/users/login`, data).pipe(tap((user)=>this.user$$.next(user)));
+    return this.http.post<User>(`${apiUrl}/users/login`, data);
   }
 
   logout() {
@@ -48,8 +50,8 @@ export class UserService {
     localStorage.removeItem(this.USER_KEY);
   }
 
-  register(data: User): Observable<User> {
+  register(data: User) {
     const { apiUrl } = environment;
-    return this.http.post<User>(`${apiUrl}/users/register`, data).pipe(tap((user)=>this.user$$.next(user)));
+    return this.http.post<User>(`${apiUrl}/users/register`, data);
   }
 }

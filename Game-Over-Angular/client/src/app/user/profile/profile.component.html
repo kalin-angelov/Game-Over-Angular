@@ -15,7 +15,7 @@
             <hr />
             <p>Email: <span>{{ user.email }}</span></p>
             <hr />
-            <p>Created games: <span>10</span></p>
+            <p>Created games: <span>{{ userGameList.length }}</span></p>
             <hr />
         </div>
     </div>
@@ -23,15 +23,23 @@
     <hr />
     <div class="list">
         <h2>Game's List</h2>
-        <p>If you want to check the details of the game, click on the image.</p>
-
-        <div class=gameList>
-
-           <h1>Hello</h1>
-
+        <p *ngIf="userGameList.length !== 0">If you want to check the details of the game, click on the image.</p>
+        
+        <div class=gameList *ngIf="userGameList.length !== 0">
+          
+            <div class="myGames" *ngFor="let game of userGameList">
+                <a routerLink="/details/{{game._id}}">
+                    <img src="{{game.imageUrl}}" alt="{{game.title}}">
+                </a>
+                
+                <div>
+                    <button class="deleteBtn" (click)="deleteGame(game._id, game._ownerId)">Delete</button>
+                    <button class="editBtn" (click)="editGame(game._id)">Edit</button>
+                </div>
+            </div>
         </div>
 
-        <div class="noGames">
+        <div class="noGames" *ngIf="userGameList.length === 0">
             <h3>Your List Is Empty</h3>
             <p> You can change that by clicking on the create button!</p>
         </div>

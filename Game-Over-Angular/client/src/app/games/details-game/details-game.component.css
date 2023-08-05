@@ -120,25 +120,24 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin: 10px;
+    margin: -14px 10px;
 }
 
 .userSection h3 {
     display: inline-block;
     font-size: 28px;
     line-height: 50px;
-    font-weight: 500;
     color: black;
 }
 
 .userSection p {
     display: inline-block;
     margin: 0 30px;
-    line-height: 50px;
+    font-size: 20px;
 }
 
 .userSection ul {
-    margin: 10px;
+    margin: 25px;
     list-style: none;
     display: flex;
     align-items: center;
@@ -146,15 +145,14 @@
 }
 
 .userSection button {
-    padding: 0 30px;
+    padding: 3px 30px;
     background-color: gold;
     border-radius: 30px;
     cursor: pointer;
 }
 
 .commentSection  {
-    width: 800px;
-    font-size: 20px;
+    font-size: 28px;
     color: gold;
 }
 
@@ -168,7 +166,22 @@
     color:red;
 }
 
-.likeComment:hover {
-    border: #0353ff solid 1px;
-    color: rgb(0, 68, 255);
+.EditCommentForm {
+    background-color: rgba(255, 249, 249, 0.606);
+    position: absolute;
+    width: 100%;
+    height: 83rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.EditCommentForm textarea {
+    width: 800px;
+    height: 200px;
+    border-radius: 10px;
+    border: 5px solid green;
 }

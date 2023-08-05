@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GamesService } from '../games.service'
 import { Game } from 'src/app/types/game';
+import { UserService } from 'src/app/user/user.service';
+import { NgForm } from '@angular/forms';
+import { CommentsService } from '../comments.service';
+import { Comment } from 'src/app/types/comments';
 
 @Component({
   selector: 'app-details-game',
@@ -10,18 +14,86 @@ import { Game } from 'src/app/types/game';
 })
 export class DetailsGameComponent implements OnInit{
   game: Game | undefined;
+  comment: Comment | undefined;
+  commentsList: Comment[] = [];
 
-  constructor(private gamesService: GamesService, private activatedRoute: ActivatedRoute) {}
+  gameId = this.activatedRoute.snapshot.params['gameId'];
+  userId = this.userService.getUser()?._id;
+
+  showEditComment: boolean = false;
+
+  constructor(
+    private gamesService: GamesService, 
+    private activatedRoute: ActivatedRoute, 
+    private userService: UserService,
+    private commentService: CommentsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.fetchGame();
+    this.fetchComments();
+  }
+
+  get isLoggedIn():boolean {
+    return this.userService.isLogged;
   }
 
   fetchGame(): void {
-    const id = this.activatedRoute.snapshot.params['gameId'];
-
-    this.gamesService.getGame(id).subscribe(game => {
+    this.gamesService.getGame(this.gameId).subscribe(game => {
       this.game = game;
     })
+  }
+
+  fetchComments(): void {
+    this.commentService.getAllComments(this.gameId).subscribe(data => {
+      this.commentsList = data;
+    });
+  }
+
+  createCommentBody( form: NgForm ) {
+    const date = new Date()
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const user = this.userService.getUser();
+    const fullDate = [ day, month, year].join('-');
+
+    return { 
+      user: String(user?.username),
+      text: String(form.value.comment),
+      likes: [],
+      createdAt: String(fullDate),
+      _createdOn:Number(),
+      _id: '',
+      _ownerId: ''
+    };
+  }
+
+  addComment( form: NgForm ): void {
+    const body = this.createCommentBody(form);
+    this.commentService.addComment(this.gameId, body).subscribe(() => {
+      this.router.navigate([`/details/${this.gameId}`]);
+    });
+  }
+
+  removeComment( commentId: string ):void {
+    this.commentService.deleteComment(this.gameId, commentId).subscribe();
+  }
+
+
+  showEditCommentSection( commentId: string ) {
+    this.showEditComment = true;
+    this.commentService.getComment(this.gameId, commentId).subscribe(data => {
+      this.comment = data;
+    })
+  }
+
+  editComment(  form: NgForm, commentId: string ): void{
+    const body = this.createCommentBody(form);
+    this.commentService.editComment(this.gameId, commentId, body).subscribe(() => {
+      this.router.navigate([`/details/${this.gameId}`]);
+    });
+    this.showEditComment = false;
   }
 }

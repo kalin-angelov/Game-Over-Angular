@@ -30,10 +30,8 @@ export class GamesService {
     return this.http.delete<Game>(`${apiUrl}/data/games/${gameId}`);
   }
 
-  editGame(gameId: string, body: string) {
+  editGame(gameId: string, body: Game) {
     const { apiUrl } = environment; 
-    console.log(gameId);
-    
     return this.http.put<Game>(`${apiUrl}/data/games/${gameId}`, body);
   }
 }

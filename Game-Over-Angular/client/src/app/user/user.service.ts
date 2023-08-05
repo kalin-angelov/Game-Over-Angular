@@ -29,8 +29,6 @@ export class UserService {
   }
 
   setUserInLs(user: User): void {
-    console.log(user);
-    
     this.user = user;
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
   }

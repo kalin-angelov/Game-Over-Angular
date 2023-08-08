@@ -30,6 +30,24 @@ export class DetailsGameComponent implements OnInit{
     private router: Router
   ) {}
 
+  createCommentBody( form: NgForm ) {
+    const date = new Date()
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const user = this.userService.getUser();
+    const fullDate = [ day, month, year].join('-');
+
+    return { 
+      user: String(user?.username),
+      text: String(form.value.comment),
+      createdAt: String(fullDate),
+      _createdOn:Number(),
+      _id: '',
+      _ownerId: ''
+    };
+  }
+
   ngOnInit(): void {
     this.fetchGame();
     this.fetchComments();
@@ -51,49 +69,42 @@ export class DetailsGameComponent implements OnInit{
     });
   }
 
-  createCommentBody( form: NgForm ) {
-    const date = new Date()
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const user = this.userService.getUser();
-    const fullDate = [ day, month, year].join('-');
-
-    return { 
-      user: String(user?.username),
-      text: String(form.value.comment),
-      likes: [],
-      createdAt: String(fullDate),
-      _createdOn:Number(),
-      _id: '',
-      _ownerId: ''
-    };
-  }
-
   addComment( form: NgForm ): void {
     const body = this.createCommentBody(form);
-    this.commentService.addComment(this.gameId, body).subscribe(() => {
-      this.router.navigate([`/details/${this.gameId}`]);
+    this.commentService.addComment(this.gameId, body).subscribe((comment) => {
+      this.commentsList = [...this.commentsList, comment];
+      form.reset();
     });
   }
 
   removeComment( commentId: string ):void {
-    this.commentService.deleteComment(this.gameId, commentId).subscribe();
-  }
-
-
-  showEditCommentSection( commentId: string ) {
-    this.showEditComment = true;
-    this.commentService.getComment(this.gameId, commentId).subscribe(data => {
-      this.comment = data;
-    })
+    this.commentService.deleteComment(this.gameId, commentId).subscribe(() => {
+      this.commentsList = this.commentsList.filter(comment => comment._id !== commentId);
+    });
   }
 
   editComment(  form: NgForm, commentId: string ): void{
     const body = this.createCommentBody(form);
-    this.commentService.editComment(this.gameId, commentId, body).subscribe(() => {
-      this.router.navigate([`/details/${this.gameId}`]);
+    this.commentService.editComment(this.gameId, commentId, body).subscribe(updatedComment => {
+      this.commentsList = this.commentsList.map((comment) => {
+        if (comment._id === commentId) {
+          return updatedComment;
+        }
+        return comment;
+      })
+      
     });
+    this.showEditComment = false;
+  }
+  
+  showEditCommentSection( commentId: string ) {
+    this.showEditComment = true;
+    this.commentService.getComment(this.gameId, commentId).subscribe(comment => {
+      this.comment = comment;
+    })
+  }
+
+  hideEditCommentSection() {
     this.showEditComment = false;
   }
 }

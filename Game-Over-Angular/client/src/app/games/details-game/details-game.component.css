@@ -102,6 +102,7 @@
     border-radius: 20px;
     border: 2px solid gold;
     background: #1b1f24;
+    width: 800px;
 }
 
 .userSection {
@@ -112,7 +113,7 @@
     background-color: rgb(255, 94, 0);
     border-top-left-radius: 17px;
     border-top-right-radius: 17px;
-    width: 800px;
+    width: 796px;
 }
 
 .userSection img {
@@ -154,6 +155,7 @@
 .commentSection  {
     font-size: 28px;
     color: gold;
+    margin: 10px;
 }
 
 .editComment:hover {
@@ -167,21 +169,57 @@
 }
 
 .EditCommentForm {
-    background-color: rgba(255, 249, 249, 0.606);
-    position: absolute;
-    width: 100%;
-    height: 83rem;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 0;
+    position: fixed;
+    z-index: 1; 
     left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(202, 192, 192, 0.341);
 }
 
 .EditCommentForm textarea {
-    width: 800px;
-    height: 200px;
+    max-width: 656px;
+    min-width: 656px;
+    min-height: 200px;
     border-radius: 10px;
-    border: 5px solid green;
+    border: 3px solid green;
+}
+
+.close {
+    border: #000 solid 1px;
+    background-color: #ff0303;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.close:hover {
+    background-color: #fff;
+    border: #fff solid 1px;
+    color: #f00;
+}
+
+.save {
+    border: #000 solid 1px;
+    background-color: green;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.save:hover {
+    background-color: #fff;
+    border: #fff solid 1px;
+    color: #f00;
 }

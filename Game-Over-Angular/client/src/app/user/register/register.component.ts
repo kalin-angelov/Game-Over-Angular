@@ -23,15 +23,29 @@ export class RegisterComponent {
     
     const data = {...form.value};
 
-    if (form.valid && (form.value.password == form.value.rePassword)) {
-
-      this.userService.register(data).subscribe({
-        next: (response) => this.userService.setUserInLs(response),
-        error: ({ error }) => this.error = error.error,
-        complete: () => this.router.navigate(['/profile'])
-      })
+    if (form.valid) {
+      if (form.value.password == form.value.rePassword) {
+        this.userService.register(data).subscribe({
+          next: (response) => this.userService.setUserInLs(response),
+          error: ({ error }) => {
+            this.error = error.message;
+            setTimeout(() => {
+              this.error = undefined;
+            },3000)
+          },
+          complete: () => this.router.navigate(['/profile'])
+        })
+      } else {
+        this.error = 'Password don\'t match!'
+        setTimeout(() => {
+          this.error = undefined;
+        },3000)
+      }
     } else {
       return
     }
+      
+    
+      
   }
 }

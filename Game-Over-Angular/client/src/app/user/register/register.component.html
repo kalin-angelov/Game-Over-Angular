@@ -70,6 +70,7 @@
 
         <ng-container  *ngIf="inputRePassword.touched">
             <p class="error" *ngIf="inputRePassword.errors?.['required']">Confirm Password</p>
+            <p class="error" *ngIf="error">{{ error }}</p>
         </ng-container >
         
         <button class="send">Register</button>

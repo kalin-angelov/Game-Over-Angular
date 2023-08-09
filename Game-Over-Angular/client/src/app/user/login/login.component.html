@@ -38,6 +38,7 @@
         <ng-container  *ngIf="inputPassword.touched">
             <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must be at least 6 characters!</p>
             <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required!</p>
+            <p class="error" *ngIf="error">{{ error }}</p>
         </ng-container >
 
         <button class="send">Login</button>

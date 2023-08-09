@@ -12,11 +12,11 @@ export class CreateGameComponent {
 
   constructor (private gamesService: GamesService, private router: Router ) { };
 
-
   addGame( form: NgForm):void {
     if (form.invalid) {
       return
     }
+
     const gameBody = {...form.value};
 
     if (form.valid) {

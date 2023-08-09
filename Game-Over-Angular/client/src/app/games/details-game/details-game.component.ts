@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { GamesService } from '../games.service'
 import { Game } from 'src/app/types/game';
 import { UserService } from 'src/app/user/user.service';
@@ -26,8 +26,7 @@ export class DetailsGameComponent implements OnInit{
     private gamesService: GamesService, 
     private activatedRoute: ActivatedRoute, 
     private userService: UserService,
-    private commentService: CommentsService,
-    private router: Router
+    private commentService: CommentsService
   ) {}
 
   createCommentBody( form: NgForm ) {

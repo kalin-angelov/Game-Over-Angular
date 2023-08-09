@@ -26,7 +26,12 @@ export class LoginComponent {
     if (form.valid) {
       this.userService.login(data).subscribe({
         next: (response) => this.userService.setUserInLs(response),
-        error: ({ error }) => this.error = error.error,
+        error: ({ error }) => {
+          this.error = error.message;
+          setTimeout(() => {
+            this.error = undefined;
+          },3000);
+        },
         complete: () => this.router.navigate(['/profile'])
       });
     }

@@ -19,7 +19,7 @@ import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
     AppComponent,
     HomeComponent,
     NotfoundComponent,
-    GlobalLoaderComponent
+    GlobalLoaderComponent,
   ],
   imports: [
     BrowserModule,

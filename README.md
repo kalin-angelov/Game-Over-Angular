@@ -3,7 +3,7 @@ Game-Over is a web appliation were you can find advice on how to beat the game t
 
 ## Installation
 1. Clone this repository on your local machine.
-2. Open a terminal and navigate to the Junkyard directory.
+2. Open a terminal and navigate to the client directory with the command `cd client`.
 3. Run the command `npm install` to install the necessary dependencies.
 
 ## Running the Application

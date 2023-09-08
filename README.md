@@ -1,5 +1,5 @@
 # Game-Over-Angular
-Game-Over is a web appliation were you can find advice on how to beat the game that ss giving you a hard time.
+Game-Over is a web appliation were you can find advice on how to beat the game that is giving you a hard time.
 
 ## Installation
 1. Clone this repository on your local machine.
